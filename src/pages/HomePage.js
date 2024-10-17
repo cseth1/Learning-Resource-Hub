@@ -3,7 +3,7 @@ import { Search, Book, Video, User } from 'lucide-react';
 import Button from '../components/button';
 import Input from '../components/input';
 import Progress from '../components/progress';
-import Avatar from '../components/avatar';
+import Avatar from '../components/Avatar';
 import Card from '../components/card';
 import Link from 'next/link';
 
