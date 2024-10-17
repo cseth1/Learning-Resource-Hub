@@ -342,3 +342,101 @@ For detailed API documentation and component specifications, please refer to the
 
 #how to build the project 
 
+# Project Setup and Initial Code
+
+## 1. Server Setup (server.js)
+
+Create a file named `server.js` in the root directory with the following content:
+
+```javascript
+const express = require('express');
+const dotenv = require('dotenv');
+const cors = require('cors');
+const sequelize = require('./config/database');
+const authRoutes = require('./routes/auth');
+
+## 2. Environment Variables (.env)
+
+Create a `.env` file in the root directory with the following content:
+
+```
+PORT=5000
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=learning_resource_hub
+DB_USER=your_username
+DB_PASSWORD=your_password
+
+## 3. Database Configuration (config/database.js)
+
+Create a file named `database.js` in the `config` directory:
+
+```javascript
+const { Sequelize } = require('sequelize');
+const dotenv = require('dotenv');
+
+dotenv.config();
+
+
+## 4. User Model (models/User.js)
+
+Create a file named `User.js` in the `models` directory:
+
+```javascript
+const { DataTypes } = require('sequelize');
+const sequelize = require('../config/database');
+
+const User = sequelize.define('User', {
+  username: {
+    type: DataTypes.STRING,
+    allowNull: false,
+
+
+## 5. Authentication Controller (controllers/authController.js)
+
+Create a file named `authController.js` in the `controllers` directory:
+
+```javascript
+const User = require('../models/User');
+const jwt = require('jsonwebtoken');
+
+exports.register = async (req, res) => {
+  try {
+    const { username, email, password } = req.body;
+
+
+## 6. Authentication Routes (routes/auth.js)
+
+Create a file named `auth.js` in the `routes` directory:
+
+```javascript
+const express = require('express');
+const router = express.Router();
+const authController = require('../controllers/authController');
+
+router.post('/register', authController.register);
+router.post('/login', authController.login);
+
+
+## 7. Authentication Middleware (middleware/auth.js)
+
+Create a file named `auth.js` in the `middleware` directory:
+
+```javascript
+const jwt = require('jsonwebtoken');
+
+module.exports = (req, res, next) => {
+  try {
+    const token = req.headers.authorization.split(' ')[1];
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+
+## 8. Install Dependencies
+
+Run the following command to install the necessary dependencies:
+
+```
+npm install
+```
+
+#
