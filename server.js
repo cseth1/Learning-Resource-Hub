@@ -4,6 +4,7 @@ const cors = require('cors');
 const sequelize = require('./config/database');
 const authRoutes = require('./routes/auth');
 const resourceRoutes = require('./routes/resources');
+const userRoutes = require('./routes/users');
 
 // Load environment variables
 dotenv.config();
@@ -32,14 +33,24 @@ sequelize.sync({ force: false })
   })
   .catch(err => console.error('Error syncing database:', err));
 
+// API routes
+app.use('/api/resources', resourceRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/auth', authRoutes);
+
+// Serve static files from the public directory
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Serve the index.html for any other routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Something broke!');
 });
-
-// Routes
-app.use('/api/auth', authRoutes);
-app.use('/api/resources', resourceRoutes);
 
 module.exports = app;
