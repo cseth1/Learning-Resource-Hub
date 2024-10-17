@@ -1,8 +1,6 @@
-// components/HeroSection.js
 import React from 'react';
-import { SearchIcon } from '@heroicons/react/solid';
+import { SearchIcon } from '@heroicons/react/24/solid'; // Update import for v2
 
-// Define topics directly in the component for now
 const popularTopics = [
   { name: 'Web Development', icon: '🌐' },
   { name: 'Digital Marketing', icon: '📊' },
@@ -16,13 +14,9 @@ function HeroSection() {
   return (
     <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white">
       <div className="container mx-auto px-6 py-16 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          What do you want to learn today?
-        </h1>
-        <p className="text-xl mb-8">
-          Discover thousands of courses and resources to boost your skills
-        </p>
-
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">What do you want to learn today?</h1>
+        <p className="text-xl mb-8">Discover thousands of courses and resources to boost your skills</p>
+        
         {/* Search Bar */}
         <div className="max-w-2xl mx-auto mb-12">
           <div className="relative">
@@ -68,3 +62,4 @@ function HeroSection() {
 }
 
 export default HeroSection;
+
