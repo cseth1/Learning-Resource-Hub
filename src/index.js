@@ -1,4 +1,4 @@
-import './styles/globals.css'; // Adjust the path according to your project structure
+import './styles/global.css'; 
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Search, Book, Video, User } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Progress } from '@/components/ui/progress';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import Button from '../components/button';
+import Input from '../components/input';
+import Progress from '../components/progress';
+import Avatar from '../components/avatar';
+import Card from '../components/card';
 import Link from 'next/link';
 
 export default function HomePage() {  // Updated the component name

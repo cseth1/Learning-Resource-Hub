@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Use Routes
 import Header from './components/Header';
 import Footer from './components/Footer';
-import '@/styles/globals.css';
+import './styles/global.css'; 
 import Loading from './components/Loading';
 
 // Lazy load pages
