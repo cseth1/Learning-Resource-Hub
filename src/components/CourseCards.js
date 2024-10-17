@@ -1,6 +1,5 @@
-// components/CourseCards.js
 import React from 'react';
-import { StarIcon, ClockIcon, UserIcon } from '@heroicons/react/solid';
+import { StarIcon, ClockIcon, UserIcon } from '@heroicons/react/24/solid'; // Update import paths
 
 const courses = [
   {
@@ -66,3 +65,4 @@ function CourseCards() {
 }
 
 export default CourseCards;
+
