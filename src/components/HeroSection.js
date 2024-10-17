@@ -1,5 +1,5 @@
 import React from 'react';
-import { SearchIcon } from '@heroicons/react/24/solid'; // Update import for v2
+import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 
 const popularTopics = [
   { name: 'Web Development', icon: '🌐' },
@@ -17,17 +17,17 @@ function HeroSection() {
         <h1 className="text-4xl md:text-5xl font-bold mb-4">What do you want to learn today?</h1>
         <p className="text-xl mb-8">Discover thousands of courses and resources to boost your skills</p>
         
-        {/* Search Bar */}
-        <div className="max-w-2xl mx-auto mb-12">
+       {/* Search Bar */}
+       <div className="max-w-2xl mx-auto mb-12">
           <div className="relative">
             <input
               type="text"
               placeholder="Search for any topic..."
               className="w-full px-6 py-4 rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
-            <button className="absolute right-2 top-2 bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700">
-              <SearchIcon className="h-6 w-6" />
-            </button>
+           <button className="absolute right-2 top-2 bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700">
+  <MagnifyingGlassIcon className="h-6 w-6" />
+</button>
           </div>
         </div>
 
