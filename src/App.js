@@ -1,24 +1,24 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Container } from '@material-ui/core';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import ResourceList from './components/ResourceList';
-import Login from './components/Login';
-import Register from './components/Register';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import CourseDetailPage from './components/CourseDetailPage';
 
 function App() {
   return (
     <Router>
-      <Navbar />
-      <Container>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/resources" component={ResourceList} />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-        </Switch>
-      </Container>
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        <main className="flex-grow">
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/course/:id" component={CourseDetailPage} />
+            {/* Add other routes as needed */}
+          </Switch>
+        </main>
+        <Footer />
+      </div>
     </Router>
   );
 }

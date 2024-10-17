@@ -420,7 +420,7 @@ router.post('/login', authController.login);
 
 ## 7. Authentication Middleware (middleware/auth.js)
 
-Create a file named `auth.js` in the `middleware` directory:
+Crepate a file named `auth.js` in the `middleware` directory:
 
 ```javascript
 const jwt = require('jsonwebtoken');
@@ -440,3 +440,15 @@ npm install
 ```
 
 #
+
+# Frontend Design and Planning Document
+
+This document outlines the key features, layout, and design considerations for the Learning Resource Hub frontend, inspired by top educational websites.
+
+## Table of Contents
+1. [Key Features from Top Educational Websites](#key-features-from-top-educational-websites)
+2. [Front-End Layout](#front-end-layout-combining-key-features)
+3. [Suggested Color Palette and Design](#suggested-color-palette-and-design)
+4. [Frontend Development Frameworks & Tools](#frontend-development-frameworks--tools)
+
+---
