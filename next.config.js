@@ -1,15 +1,7 @@
-// next.config.js
 module.exports = {
-    webpack: (config, { isServer }) => {
-      // Ignore source map warnings from node_modules
-      if (!isServer) {
-        config.module.rules.push({
-          test: /\.js$/,
-          enforce: 'pre',
-          use: ['source-map-loader'],
-          exclude: /node_modules/,
-        });
-      }
+    productionBrowserSourceMaps: false,  // Disable source maps in production
+    webpack: (config) => {
+      config.devtool = false;  // Disable source maps in development
       return config;
     },
   };
