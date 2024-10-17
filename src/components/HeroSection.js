@@ -1,6 +1,16 @@
+// components/HeroSection.js
 import React from 'react';
 import { SearchIcon } from '@heroicons/react/solid';
-import { popularTopics } from '../data/topics'; // Separate out the data
+
+// Define topics directly in the component for now
+const popularTopics = [
+  { name: 'Web Development', icon: '🌐' },
+  { name: 'Digital Marketing', icon: '📊' },
+  { name: 'Data Science', icon: '📈' },
+  { name: 'Design', icon: '🎨' },
+  { name: 'Business', icon: '💼' },
+  { name: 'Personal Development', icon: '🌱' },
+];
 
 function HeroSection() {
   return (
@@ -57,4 +67,4 @@ function HeroSection() {
   );
 }
 
-export default React.memo(HeroSection);
+export default HeroSection;
